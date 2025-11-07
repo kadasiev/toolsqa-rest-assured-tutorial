@@ -16,14 +16,14 @@ public class DeserializationTest {
     requestParams.put("userName", "test_rest");
     requestParams.put("password", "rest@1235)F");
 
-    JSONResponse JSONResponse = given()
+    HTTPResponse httpResponse = given()
         .header("Content-Type", "application/json")
         .body(requestParams.toJSONString())
     .when()
         .post("/Account/v1/User")
-        .as(JSONResponse.class);
+        .as(HTTPResponse.class);
 
-    System.out.println("Operation code: " + JSONResponse.code);
-    System.out.println("Operation message: " + JSONResponse.message);
+    System.out.println("Operation code: " + httpResponse.code);
+    System.out.println("Operation message: " + httpResponse.message);
   }
 }

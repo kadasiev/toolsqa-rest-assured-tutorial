@@ -1,6 +1,6 @@
 package advance.deserialization;
 
-class JSONResponse {
+class HTTPResponse {
 
   public String code;
   public String message;
